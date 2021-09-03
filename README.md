@@ -4,6 +4,7 @@ The function theFunction does the computation of our required logic.
 Example 1
 Input: "year", "electricity", "apple"
 Output: "appectricitear"
+
 Example 2
 Input: "tree", “must”, "museum", "ethereum"
 Output: "etheresesree"
