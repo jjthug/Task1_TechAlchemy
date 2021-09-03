@@ -1,6 +1,7 @@
 The smart contract Greeter.sol can be found inside the contracts folder.
 
 The function theFunction does the computation of our required logic.
+
 Example 1
 Input: "year", "electricity", "apple"
 Output: "appectricitear"
