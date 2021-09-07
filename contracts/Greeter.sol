@@ -18,7 +18,7 @@ function theFunction(string[] calldata data) public pure returns(string memory) 
     
     for(uint i = len - 1; i>=1; --i)
     {   unchecked {
-        len = compare(data[i], data[i-1]);
+        len = compare(a, data[i-1]);
         a = concatString(a, data[i-1], len);
         }
     }
@@ -26,7 +26,7 @@ function theFunction(string[] calldata data) public pure returns(string memory) 
     return a;
 }
 
-function concatString(string memory a, string calldata b, uint len) public pure returns(string memory){
+function concatString(string memory a, string calldata b, uint len) internal pure returns(string memory){
     bytes memory a1 =bytes(a); 
     bytes memory b1 = bytes(b);
      bytes memory s;
@@ -42,14 +42,17 @@ function concatString(string memory a, string calldata b, uint len) public pure 
     return string(s);
 }
 
-function compare(string calldata b, string calldata a) public pure returns(uint){
+function compare(string memory b, string calldata a) internal pure returns(uint){
     bytes memory a1 = bytes(a);
     bytes memory b1 = bytes(b);
     uint val =0;
 
+
     for(uint i =0; i< a1.length && i<b1.length ; i++ ){
         if (a1[i] == b1[b1.length -1 -i] )
-        val++;
+        {val++;}
+        else
+        {return val;}
     }
     return val;
     }
